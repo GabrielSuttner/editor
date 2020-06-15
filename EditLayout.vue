@@ -1,5 +1,6 @@
 <template>
   <div class="relative">
+    <link rel="stylesheet" type="text/css" src="./editor.css" />
     <transition name="fadeFast">
       <div class="fixed z-10 sm:rounded sm:shadow-blur-glow editLayout" v-if="seeEdit">
         <!-- This is the header bar -->
@@ -411,14 +412,18 @@ export default {
     },
     setLinkInternal() {
       const link = { name: 'CategoryProduct', query: { type: 'normal' } };
-      if (this.internalLink.levelOne === 'Category') {
+      if (this.internalLink.type === 'Category') {
         link.query.categories = this.internalLink.name;
-      }
-      if (this.internalLink.levelOne === 'Tag') {
+      } else if (this.internalLink.type === 'Tag') {
         link.name = 'Products';
-        link.query.categories = this.internalLink.name;
-      }
-      if (this.internalLink.levelOne !== 'Category' && this.internalLink.levelOne !== 'Tag') {
+        link.query.tags = this.internalLink.name;
+      } else if (this.internalLink.type === 'Vendor') {
+        link.name = 'Products';
+        link.query.vendor = this.internalLink.name;
+      } else if (this.internalLink.Type === 'Subcategory') {
+        link.query.categories = this.internalLink.link.category;
+        link.query.subcategories = this.internalLink.link.name;
+      } else if (this.internalLink.Type !== 'Category' && this.internalLink.Type !== 'Tag') {
         link.query.categories = this.internalLink.levelOne;
         link.query.subcategories = this.internalLink.name;
       }
@@ -498,12 +503,6 @@ export default {
     },
   },
   mounted() {
-    let head = document.getElementsByTagName('HEAD')[0];
-    let link = document.createElement('link');
-    link.rel = 'stylesheet';
-    link.type = 'text/css';
-    link.href = '//cdn.quilljs.com/1.0.0/quill.snow.css';
-    head.appendChild(link);
     this.layout = this.$store.getters.getLayoutByID(this.$route.params.id);
 
     const tags = this.$store.state.tags.sort((a, b) => {
@@ -514,6 +513,13 @@ export default {
     this.tags = tags;
   },
   created() {
+    // let head = document.getElementsByTagName('HEAD')[0];
+    // let link = document.createElement('link');
+    // link.rel = 'stylesheet';
+    // link.type = 'text/css';
+    // link.href = 'http://cdn.quilljs.com/1.0.0/quill.snow.css';
+    // head.appendChild(link);
+
     if (this.seeEdit) {
       document.getElementsByTagName('BODY')[0].classList.add('overflow-hidden');
     }
