@@ -1,6 +1,5 @@
 <template>
   <div class="relative">
-    <link rel="stylesheet" type="text/css" src="./editor.css" />
     <transition name="fadeFast">
       <div class="fixed z-10 sm:rounded sm:shadow-blur-glow editLayout" v-if="seeEdit">
         <!-- This is the header bar -->
@@ -296,7 +295,6 @@
 </template>
 
 <script>
-import 'quill/dist/quill.snow.css';
 import { quillEditor } from 'vue-quill-editor';
 
 import Concise from '../layouts/Concise';
@@ -528,6 +526,8 @@ export default {
 </script>
 
 <style>
+@import './editor.css';
+
 ul.withIcons {
   min-width: 8rem;
 }
