@@ -1,7 +1,18 @@
 <template>
   <div class="relative">
     <transition name="fadeFast">
-      <div class="fixed z-10 sm:rounded sm:shadow-blur-glow editLayout" v-if="seeEdit">
+      <div
+        class="fixed z-10 sm:rounded sm:shadow-blur-glow editLayout"
+        v-if="seeEdit"
+        style="
+          background-color: rgba(255, 255, 255, 0.6);
+          backdrop-filter: blur(0.5em);
+          left: 8rem;
+          right: 8rem;
+          top: 10vh;
+          height: 72vh;
+        "
+      >
         <!-- This is the header bar -->
         <div
           class="flex items-center justify-between shadow-md px-2 sm:rounded-t h-12 bg-gray-200 text-gray-700 z-2 relative"
@@ -535,14 +546,7 @@ ul.noIcons {
   padding-left: 2rem;
   min-width: 8rem;
 }
-.editLayout {
-  background-color: rgba(255, 255, 255, 0.6);
-  backdrop-filter: blur(0.5em);
-  left: 8rem;
-  right: 8rem;
-  top: 10vh;
-  height: 72vh;
-}
+
 .positionModule {
   height: 40vh;
 }
