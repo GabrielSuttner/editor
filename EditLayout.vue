@@ -525,7 +525,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 ul.withIcons {
   min-width: 8rem;
 }
