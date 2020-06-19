@@ -526,8 +526,6 @@ export default {
 </script>
 
 <style>
-@import './editor.css';
-
 ul.withIcons {
   min-width: 8rem;
 }
