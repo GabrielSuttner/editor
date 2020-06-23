@@ -250,7 +250,7 @@
         <button
           v-if="!seeEdit"
           @click="seeEdit = true"
-          class="fixed bottom-2 left-0 right-0 w-56 mx-auto py-2 rounded-full z-2 blueBtn shadow-lg"
+          class="fixed bottom-2 left-0 right-0 w-56 mx-auto py-2 rounded-full z-2 blueBtn shadow-lg bg-white"
         >
           Go to layout editor
         </button>
@@ -536,7 +536,7 @@ export default {
 };
 </script>
 
-<style scoped>
+<style>
 ul.withIcons {
   min-width: 8rem;
 }
