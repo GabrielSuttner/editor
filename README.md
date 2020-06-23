@@ -1,6 +1,9 @@
 # Editor
 Currently this editor is not operational outside of a bigger project, it is not self contained. It is its own repository so that changes made to the editor can be easily shared between projects. 
 
+# Updates
+git submodule update --remote
+
 # Layout Model
 If there are updates to the model that is used for the layout, the model needs to be set here for continuity:
 
