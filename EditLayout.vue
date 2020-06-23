@@ -522,12 +522,12 @@ export default {
     this.tags = tags;
   },
   created() {
-    // let head = document.getElementsByTagName('HEAD')[0];
-    // let link = document.createElement('link');
-    // link.rel = 'stylesheet';
-    // link.type = 'text/css';
-    // link.href = 'http://cdn.quilljs.com/1.0.0/quill.snow.css';
-    // head.appendChild(link);
+    let head = document.getElementsByTagName('HEAD')[0];
+    let link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = 'http://cdn.quilljs.com/1.0.0/quill.snow.css';
+    head.appendChild(link);
 
     if (this.seeEdit) {
       document.getElementsByTagName('BODY')[0].classList.add('overflow-hidden');
