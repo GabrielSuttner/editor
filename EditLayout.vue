@@ -308,11 +308,11 @@
 <script>
 import { quillEditor } from 'vue-quill-editor';
 
-import Concise from '../layouts/Concise';
-import Lengthy from '../layouts/Lengthy';
-import Banner from '../layouts/Banner';
-import Hero from '../layouts/Hero';
-import Legal from '../layouts/Legal';
+import Concise from '@/../layouts/Concise';
+import Lengthy from '@/../layouts/Lengthy';
+import Banner from '@/../layouts/Banner';
+import Hero from '@/../layouts/Hero';
+import Legal from '@/../layouts/Legal';
 
 import Uploader from '@/components/Uploader.vue';
 import ConfirmationModal from '@/components/shared/ConfirmationModal';
