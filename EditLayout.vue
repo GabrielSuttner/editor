@@ -225,12 +225,13 @@
                 Add image
               </div>
             </div>
-            <Uploader
-              v-if="showUploader"
-              @setValues="setValues"
-              @uploadFinished="showUploader = false"
-              @escape="showUploader = false"
-            ></Uploader>
+            <PopUp v-if="showUploader">
+              <Uploader
+                @setValues="setValues"
+                @uploadFinished="showUploader = false"
+                @escape="showUploader = false"
+              ></Uploader>
+            </PopUp>
           </div>
 
           <!-- Editor -->
@@ -313,7 +314,10 @@ import Lengthy from '@/layouts/Lengthy';
 import Banner from '@/layouts/Banner';
 import Hero from '@/layouts/Hero';
 import Legal from '@/layouts/Legal';
+import ConciseRight from '@/layouts/ConciseRight';
+import ConciseLeft from '@/layouts/ConciseLeft';
 
+import PopUp from '@/components/shared/ModalPopup';
 import Uploader from '@/components/Uploader.vue';
 import ConfirmationModal from '@/components/shared/ConfirmationModal';
 import ModalPopup from '@/components/shared/ModalPopup';
@@ -333,8 +337,17 @@ export default {
     delta: undefined,
 
     //Header Variables
-    templates: ['Concise', 'Lengthy', 'Banner', 'Hero', 'Legal'],
-    pages: ['Home Page', 'About', 'Contact', 'Banner', 'Privacy', 'Return'],
+    templates: ['Concise', 'Lengthy', 'Banner', 'Hero', 'Legal', 'ConciseRight', 'ConciseLeft'],
+    pages: [
+      'Home Page',
+      'About',
+      'Contact',
+      'Banner',
+      'Privacy',
+      'Return',
+      'Retail Info',
+      'Commercial Info',
+    ],
     showTemplates: false,
     showUploader: false,
     showChangeImage: false,
@@ -366,6 +379,9 @@ export default {
     ModalPopup,
     Legal,
     ConfirmationModal,
+    ConciseRight,
+    ConciseLeft,
+    PopUp,
   },
   computed: {},
   watch: {
