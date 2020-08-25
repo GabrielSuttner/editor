@@ -1,5 +1,6 @@
 <template>
   <div class="relative">
+    <link rel="stylesheet" href="//cdn.quilljs.com/1.3.6/quill.snow.css" />
     <transition name="fadeFast">
       <div
         class="fixed z-10 sm:rounded sm:shadow-blur-glow editLayout"
@@ -309,6 +310,7 @@
 <script>
 import { quillEditor } from 'vue-quill-editor';
 
+
 import Concise from '@/layouts/Concise';
 import Lengthy from '@/layouts/Lengthy';
 import Banner from '@/layouts/Banner';
@@ -321,6 +323,8 @@ import PopUp from '@/components/shared/ModalPopup';
 import Uploader from '@/components/Uploader.vue';
 import ConfirmationModal from '@/components/shared/ConfirmationModal';
 import ModalPopup from '@/components/shared/ModalPopup';
+
+
 
 export default {
   data: () => ({
