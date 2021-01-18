@@ -161,7 +161,7 @@
             </div>
           </div>
 
-          <div class="flex items-center" style="line-height: 0.5;">
+          <div class="flex items-center" style="line-height: 0.5">
             <!-- Right section of header -->
             <!-- 
               Minimize
@@ -222,9 +222,7 @@
                   <font-awesome-icon icon="plus" />
                 </div>
               </div>
-              <div class="text-center text-sm p-2">
-                Add image
-              </div>
+              <div class="text-center text-sm p-2">Add image</div>
             </div>
             <PopUp v-if="showUploader">
               <Uploader
@@ -271,9 +269,7 @@
           <select v-model="internalLink">
             <option v-for="tag in tags" :key="tag._id" :value="tag">{{ tag.name }}</option>
           </select>
-          <button class="outline-primary mx-4 px-4" @click="setLinkInternal()">
-            Save
-          </button>
+          <button class="outline-primary mx-4 px-4" @click="setLinkInternal()">Save</button>
         </div>
         <div v-else>
           <input
@@ -282,9 +278,7 @@
             class="border"
             v-model="externalLink"
           />
-          <button class="outline-primary mx-4 px-4" @click="setLinkExternal()">
-            Save
-          </button>
+          <button class="outline-primary mx-4 px-4" @click="setLinkExternal()">Save</button>
         </div>
       </ModalPopup>
     </transition>
@@ -310,7 +304,6 @@
 <script>
 import { quillEditor } from 'vue-quill-editor';
 
-
 import Concise from '@/layouts/Concise';
 import Lengthy from '@/layouts/Lengthy';
 import Banner from '@/layouts/Banner';
@@ -323,8 +316,6 @@ import PopUp from '@/components/shared/ModalPopup';
 import Uploader from '@/components/Uploader.vue';
 import ConfirmationModal from '@/components/shared/ConfirmationModal';
 import ModalPopup from '@/components/shared/ModalPopup';
-
-
 
 export default {
   data: () => ({
@@ -440,7 +431,7 @@ export default {
       this.showLink = false;
     },
     setLinkInternal() {
-      const link = { name: 'CategoryProduct', query: { type: 'normal' } };
+      const link = { name: 'Category Product', query: { type: 'normal' } };
       if (this.internalLink.type === 'Category') {
         link.query.categories = this.internalLink.name;
       } else if (this.internalLink.type === 'Tag') {
